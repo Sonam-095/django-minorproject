@@ -22,7 +22,7 @@ def login(request):
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
             # Authentication logic here
-            return redirect('homepage')
+            return redirect('moodinput')
         else:
             messages.error(request, 'Please correct the errors below.')
     else:

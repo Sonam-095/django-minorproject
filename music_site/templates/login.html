@@ -13,6 +13,7 @@
       <h1 class="login-heading">Login</h1>
       <p>Listen to <b>YOUR</b> Music with Peace</p>
       <form method="POST" action="">
+        {% csrf_token %}
         <!-- Email input -->
         <div class="form-group">
           <label for="email">Email</label>
