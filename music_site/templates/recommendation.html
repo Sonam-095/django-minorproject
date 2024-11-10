@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recommended Songs</title>
+  <link rel="stylesheet" href="../static/css/recommendation.css">
+  {% load static %} 
+  <script src="{% static '/js/recommendation.js' %}"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <h1>Your Recommended Songs</h1>
+
+    <!-- Song List -->
+    <ul class="song-list">
+      <li class="song-item">
+        <span class="song-title">Song Title 1</span>
+        <button onclick="playSong('song1.mp3')">Play</button>
+      </li>
+      <li class="song-item">
+        <span class="song-title">Song Title 2</span>
+        <button onclick="playSong('song2.mp3')">Play</button>
+      </li>
+      <li class="song-item">
+        <span class="song-title">Song Title 3</span>
+        <button onclick="playSong('song3.mp3')">Play</button>
+      </li>
+      <li class="song-item">
+        <span class="song-title">Song Title 4</span>
+        <button onclick="playSong('song4.mp3')">Play</button>
+      </li>
+      <li class="song-item">
+        <span class="song-title">Song Title 5</span>
+        <button onclick="playSong('song5.mp3')">Play</button>
+      </li>
+    </ul>
+
+    <!-- Music Player -->
+    <div class="music-player">
+      <h2>Now Playing:</h2>
+      <p id="now-playing">Select a song to play</p>
+      <audio id="audio-player" controls style="width: 100%; margin-top: 10px;">
+        <source id="audio-source" src="" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+
+      <!-- Player Controls -->
+      <div class="player-controls">
+        <button onclick="document.getElementById('audio-player').play()">Play</button>
+        <button onclick="document.getElementById('audio-player').pause()">Pause</button>
+        <button onclick="document.getElementById('audio-player').currentTime = 0">Stop</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

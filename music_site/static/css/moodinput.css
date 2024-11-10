@@ -1,0 +1,76 @@
+    /* Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6fced;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #00505e;
+      font-size: 2.5rem; /* Increased font size */
+    }
+
+    /* Container styling */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 columns */
+      gap: 20px;
+      width: 95%;
+      max-width: 800px; /* Increased max-width */
+    }
+
+    /* Mood Block Styling */
+    .mood {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 1.8rem; /* Increased font size for mood text */
+      font-weight: bold;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 20px; /* Added padding for more space inside each box */
+    }
+
+    .mood:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Distorted Sizes for Each Mood */
+    .energetic {
+      background-color: #00505e;
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .calm {
+      background-color: #67ddab;
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    .happy {
+      background-color: #57c89b;
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+
+    .sad {
+      background-color: #00404b;
+      grid-column: span 1;
+      grid-row: span 1;
+    }

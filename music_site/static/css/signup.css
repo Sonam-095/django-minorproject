@@ -1,0 +1,143 @@
+    /* Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #e6fced; /* Light background for contrast */
+    }
+
+    .container {
+      display: flex;
+      width: 90%;
+      max-width: 1200px;
+      background-color: #fef7ff;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Left panel (Signup form) */
+    .signup-form {
+      flex: 1;
+      padding: 40px;
+      background-color: #fef7ff;
+    }
+
+    .signup-form h1 {
+      font-size: 2rem;
+      color: #00505e;
+    }
+
+    .signup-form p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      color: #00505e;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .have-an-account {
+      font-size: small;
+      text-align: center;
+      margin-top: -15px;
+    }
+
+    .have-an-account a {
+      text-decoration: none;
+      color: #00505e;
+    }
+
+    /* Style for the Sign Up button */
+    .signup-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 10px;
+      background-color: #00505e; /* Dark color */
+      font-family: 'Times New Roman', Times, serif;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .signup-btn:hover {
+      background-color: #00404b; /* Slightly lighter color for hover */
+      font-weight: bold;
+    }
+
+    /* Right panel (background shapes) */
+    .info-panel {
+      flex: 1;
+      padding: 40px;
+      background-color: #67ddab;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Green background shapes (static) */
+    .shape {
+      position: absolute;
+      background-color: #00505e; /* Green color */
+      border-radius: 20px;
+      opacity: 1;
+    }
+
+    /* Specific shapes with different positions */
+    .shape1 {
+      width: 500px;
+      height: 550px;
+      top: -30%;
+      left: -60%;
+      transform: rotate(45deg); /* Equal to rotateZ(45deg) */
+      background-color: #00404bce; /* Slightly lighter green */
+    }
+
+    .shape2 {
+      width: 450px;
+      height: 350px;
+      top: 20%;
+      left: 10%;
+      transform: rotate(350deg); /* Equal to rotateZ(350deg) */
+      background-color: #00404b; /* Slightly darker green */
+    }
+
+    .shape3 {
+      width: 280px;
+      height: 340px;
+      top: 50%;
+      left: 60%;
+      transform: rotate(45deg); /* Equal to rotateZ(45deg) */
+      background-color: #00404bb5; /* Slightly more lighter green */
+    }

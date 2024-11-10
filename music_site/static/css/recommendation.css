@@ -1,0 +1,99 @@
+    /* Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6fced; /* Off-teal */
+      color: #00505e; /* Dark teal for text */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    /* Container Styling */
+    .container {
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00505e;
+    }
+
+    /* Song List Styling */
+    .song-list {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .song-item {
+      background-color: #67ddab;
+      padding: 15px;
+      border-radius: 12px;
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .song-item:hover {
+      transform: scale(1.02);
+    }
+
+    .song-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #00404b; /* Slightly darker teal */
+    }
+
+    /* Music Player Styling */
+    .music-player {
+      background-color: #00505e;
+      padding: 20px;
+      border-radius: 15px;
+      color: #e6fced; /* Off-teal text on dark teal */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .player-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .player-controls button {
+      background-color: #67ddab;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      color: #00505e;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .song-item button{
+      background-color: #00505e;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .player-controls button:hover {
+      background-color: #57c89b; /* Slightly darker green */
+    }

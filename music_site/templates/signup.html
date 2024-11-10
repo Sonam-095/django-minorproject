@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Page</title>
+  <link rel="stylesheet" href="../static/css/signup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Signup form section -->
+    <div class="signup-form">
+      <h1 class="signup-heading">Sign Up</h1>
+      <p>Listen to <b>YOUR</b> Music with Peace</p>
+      <form method="POST" action="">
+        {% csrf_token %}
+        <!-- Name input -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          {{ form.Name }}
+        </div>
+        <!-- Email input -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          {{ form.Email }}
+        </div>
+        <!-- Password input -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          {{ form.Password }}
+        </div>
+        <!-- Sign Up button -->
+        <button type="submit" class="signup-btn">Sign Up</button>
+      </form>
+      <br>
+      <div class="have-an-account">
+      <p class="have-an-account">Already have an account? <a href="{% url 'login' %}"> Login </a> </p>
+      </div>
+    </div>
+
+    <!-- Info panel with background shapes -->
+    <div class="info-panel">
+      <!-- Background shapes (stable) -->
+      <div class="shape shape1"></div>
+      <div class="shape shape2"></div>
+      <div class="shape shape3"></div>
+    </div>
+  </div>
+</body>
+</html>
