@@ -1,36 +1,33 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import signupform
-from .forms import loginform
+from .forms import SignupForm, LoginForm
 
-# signup
+# Signup view
 def signup(request):
     if request.method == 'POST':
-        form = signupform(request.POST)
+        form = SignupForm(request.POST)
         if form.is_valid():
-            form.save()  # Save to the database
-            return redirect('login')  # Redirect to login or another page
+            form.save()
+            messages.success(request, 'Signup successful! You can now log in.')
+            return redirect('login')
     else:
-        form = signupform()
+        form = SignupForm()
     return render(request, 'signup.html', {'form': form})
 
-# login
+# Login view
 def login(request):
     if request.method == 'POST':
-        form = loginform(request.POST)
+        form = LoginForm(request.POST)
         if form.is_valid():
-            email = form.cleaned_data['Email']
-            password = form.cleaned_data['Password']
-            print(f"Email: {email}, Password: {password}")  # Debug message
-            return redirect('homepage')  # Redirect to homepage on successful login
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            # Authentication logic here
+            return redirect('homepage')
         else:
-            print("Form is invalid.")  # Debug message
-            print(form.errors)  # Debug message to print form errors
             messages.error(request, 'Please correct the errors below.')
     else:
-        form = loginform()
-
-    return render(request, 'login.html', {'login': form})
+        form = LoginForm()
+    return render(request, 'login.html', {'form': form})
 
 # other pages
 def moodinput(request):
