@@ -24,7 +24,7 @@
     /* Container styling */
     .container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr); /* 4 columns */
+      grid-template-columns: repeat(4, 1fr); /* 4 columns to keep it in a rectangular form */
       gap: 20px;
       width: 95%;
       max-width: 800px; /* Increased max-width */
@@ -71,6 +71,13 @@
 
     .sad {
       background-color: #00404b;
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+
+    /* Romantic Mood */
+    .romantic {
+      background-color: #67ddab; /* Light teal to match the color scheme */
       grid-column: span 1;
       grid-row: span 1;
     }
