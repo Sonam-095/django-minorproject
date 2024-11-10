@@ -1,3 +1,4 @@
+from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import SignupForm, LoginForm
@@ -19,10 +20,7 @@ def login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['password']
-            # Authentication logic here
-            return redirect('moodinput')
+            return redirect('moodinput')  # Redirect on successful login
         else:
             messages.error(request, 'Please correct the errors below.')
     else:

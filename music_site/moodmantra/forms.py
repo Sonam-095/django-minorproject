@@ -6,11 +6,15 @@ from .models import signup
 class LoginForm(forms.Form):
     email = forms.EmailField(widget=forms.EmailInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Enter your email'
+        'placeholder': 'Enter your email',
+        'id':'email',
+        'autocomplete': 'email'
     }))
     password = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Enter your password'
+        'placeholder': 'Enter your password',
+        'id':'password',
+        'autocomplete': 'current-password'
     }))
 
     def clean(self):
@@ -18,10 +22,14 @@ class LoginForm(forms.Form):
         email = cleaned_data.get('email')
         password = cleaned_data.get('password')
 
-        if email and password:
-            user = authenticate(email=email, password=password)
-            if user is None:
+        # Check if user exists in the database
+        try:
+            user = signup.objects.get(Email=email)
+            if user.Password != password:
                 raise ValidationError('Invalid email or password.')
+        except signup.DoesNotExist:
+            raise ValidationError('Invalid email or password.')
+
         return cleaned_data
 
 
